@@ -15,17 +15,23 @@ Include:
 5. Real-world applications
 Format it in max 1000 characters.
 """
-
 def fetch_algorithm():
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-    headers = {"Content-Type": "application/json"}
-    data = {
-        "contents": [{"parts": [{"text": PROMPT}]}],
-        "generationConfig": {"temperature": 0.8, "maxOutputTokens": 256}
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+    headers = {
+        "Content-Type": "application/json",
+        "X-goog-api-key": GEMINI_API_KEY
     }
-    params = {"key": GEMINI_API_KEY}
-    
-    res = requests.post(url, headers=headers, params=params, json=data)
+    data = {
+        "contents": [
+            {
+                "parts": [
+                    {"text": PROMPT}
+                ]
+            }
+        ]
+    }
+
+    res = requests.post(url, headers=headers, json=data)
     res.raise_for_status()
     content = res.json()["candidates"][0]["content"]["parts"][0]["text"]
     return content
