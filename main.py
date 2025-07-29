@@ -17,7 +17,7 @@ def save_algorithm_name(name):
 
 def fetch_algorithm(avoid_list):
     avoid_str = ", ".join(avoid_list[-20:])  # only last 20 to keep prompt short
-prompt = f"""
+    prompt = f"""
 Generate a concise and original description of an algorithm, with a bias toward artificial intelligence or optimization. You may also draw from other domains such as cryptography, distributed systems, computer graphics, or information retrieval.
 
 Avoid these algorithms: {avoid_str}
