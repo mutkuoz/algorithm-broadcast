@@ -1,0 +1,24 @@
+name: Send Algorithm Notification
+
+on:
+  schedule:
+    - cron: "*/45 * * * *"  # Every 45 minutes
+  workflow_dispatch:        # Manual trigger from phone
+
+jobs:
+  send-algorithm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install requests
+        run: pip install requests
+      - name: Run algorithm script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python main.py
