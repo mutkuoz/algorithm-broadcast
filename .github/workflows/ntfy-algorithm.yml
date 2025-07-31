@@ -2,7 +2,8 @@ name: Send Algorithm Notification
 
 on:
   schedule:
-    - cron: "*/45 * * * *"  # Every 45 minutes
+#    - cron: "*/45 * * * *"  Paused
+ Every 45 minutes
   workflow_dispatch:        # Manual trigger from phone
 
 jobs:
