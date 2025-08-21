@@ -1,4 +1,5 @@
-# 📡 Algorithm Broadcast — AI-Powered Algorithm Summaries via Ntfy.sh
+
+# 📡 Algorithm Broadcast — AI-Powered Algorithm Summaries via Ntfy.sh [CURRENTLY DOWN]
 
 Subscribe once. Get bite-sized, AI-generated algorithm summaries directly on your phone — no apps, accounts, or setup required.
 
